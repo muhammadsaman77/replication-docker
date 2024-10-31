@@ -23,6 +23,6 @@ docker run -it --rm --net postgres -v ${PWD}/secondary/pgdata:/data --entrypoint
 pg_basebackup -h primary-db -p 5432 -U replicationUser -D /data/ -Fp -Xs -R
 
 
-docker exec -it primary-db psql -U admin -d postgres
+docker exec -it primary-db psql -U admin -d postgresdb
 
-docker exec -it secondary-db psql -U admin -d postgres
+docker exec -it secondary-db psql -U admin -d postgresdb
